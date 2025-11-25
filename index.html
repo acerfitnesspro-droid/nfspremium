@@ -6,7 +6,7 @@
     <meta name="description" content="O principal portal de notícias de Feira de Santana e região, agora com uma experiência de leitura premium." />
     <title>Notícias Feira de Santana - Premium Edition</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (via CDN para simplificar setup sem build step complexo de CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -99,18 +99,22 @@
         animation-play-state: paused;
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body class="bg-gray-50 text-slate-900 dark:bg-[#0f172a] dark:text-slate-100 transition-colors duration-300 selection:bg-accent-500 selection:text-white">
     <div id="root"></div>
+    <!-- Entry Point para o Vite -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
